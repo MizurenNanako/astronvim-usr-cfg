@@ -1,5 +1,5 @@
 return {
-    options = { g = { icons_enabled = not (vim.env.TERM == "linux") } },
+    options = {g = {icons_enabled = not (vim.env.TERM == "linux")}},
     text_icons = {
         ActiveLSP = "LSP:",
         ActiveTS = "TS:",
@@ -47,24 +47,24 @@ return {
         Selected = "*",
         Spellcheck = "[SPELL]",
         TabClose = "X"
+    },
+    plugins = {
+        {
+            "onsails/lspkind.nvim",
+            opts = function(_, opts)
+                opts.symbol_map = {
+                    Array = "Arr",
+                    Boolean = "Bool",
+                    Key = "K",
+                    Namespace = "{}",
+                    Null = "0",
+                    Number = "1",
+                    Object = "Obj",
+                    Package = "P",
+                    String = "Str"
+                }
+                return opts
+            end
+        }
     }
-	plugins = {
-		{
-		  "onsails/lspkind.nvim",
-		  opts = function(_, opts)
-			opts.symbol_map = {
-			  Array = "Arr",
-			  Boolean = "Bool",
-			  Key = "K",
-			  Namespace = "{}",
-			  Null = "0",
-			  Number = "1",
-			  Object = "Obj",
-			  Package = "P",
-			  String = "Str",
-			}
-			return opts
-		  end,
-		},
-	  },
 }
